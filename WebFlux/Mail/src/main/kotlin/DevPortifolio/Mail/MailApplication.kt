@@ -1,11 +1,11 @@
-package com.portifolio.Mail
+package DevPortifolio.Mail
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class MailSenderApplication
+class MailApplication
 
 fun main(args: Array<String>) {
-	runApplication<MailSenderApplication>(*args)
+	runApplication<MailApplication>(*args)
 }
