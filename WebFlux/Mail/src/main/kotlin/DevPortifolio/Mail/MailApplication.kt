@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class MailApplication
 
 fun main(args: Array<String>) {
-	runApplication<MailApplication>(*args)
+	runApplication<MailApplication>(*args, "--debug")
 }
