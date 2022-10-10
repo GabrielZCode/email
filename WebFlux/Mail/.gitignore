@@ -35,5 +35,5 @@ build/
 
 ##
 ./src/main/resources/application.properties
-**/src/main/resources/*
-**/src/main/kotlin/DevPortifolio/Mail/Services/*.env
+/src/main/resources/application.properties
+/src/main/kotlin/DevPortifolio/Mail/Services/*.env
