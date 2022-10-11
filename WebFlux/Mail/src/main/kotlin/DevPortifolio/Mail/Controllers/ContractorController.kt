@@ -36,7 +36,7 @@ class ContractorController(
     @GetMapping("/{email}")
     fun getId(@Valid @PathVariable("email") email: String): Contractor{
 
-      var contractor = Contractor()
+      var contractor = Contractor(-1,"", "")
      var result: Long
       try{
       result = em.createNativeQuery(""" SELECT id FROM contratante WHERE email = ?1""").setParameter(1, email).setMaxResults(1).getSingleResult().toString().toLong()
@@ -66,7 +66,7 @@ class ContractorController(
     + "[0-9]{1,2}|25[0-5]|2[0-4][0-9]))|"
     + "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$"
   ).matcher(contractor.email).matches()){
-         repository.save(contractor) 
+            repository.save(contractor)
          } else{
           return contractor.apply{
                  this.name = "Error"
@@ -75,8 +75,9 @@ class ContractorController(
            }
         }catch(e: Exception){
           return contractor.apply{
-                 this.name = "Error"
+                 this.name = "Error"+Exception(e)
                  this.email = " Duplicate Email"
+
              }
           }
         return contractor
@@ -111,7 +112,7 @@ class ContractorController(
         return false
       }
       val contractor = repository.findById(result).orElseThrow{ EntityNotFoundException()}
-      repository.delete(contractor);
-     return true
+    repository.delete(contractor);
+    return true
     }
 }

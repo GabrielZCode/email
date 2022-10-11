@@ -5,9 +5,9 @@ import javax.validation.constraints.*;
 
 
 @Entity
-@Table(name = "Contratante")
+@Table(name = "contratante")
 class Contractor(
-   @Column(unique=true)
+   @Column(unique=true, name ="id")
    @field:Id
    @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     var id:Long,
@@ -22,5 +22,7 @@ class Contractor(
     var email:String
 
 ){
-    constructor(): this(-1,"", "")
-  }
+  //  constructor(): this(-1,"", "")
+
+      }
+
