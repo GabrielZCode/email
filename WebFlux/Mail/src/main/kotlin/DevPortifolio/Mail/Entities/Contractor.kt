@@ -22,7 +22,6 @@ class Contractor(
     var email:String
 
 ){
-  //  constructor(): this(-1,"", "")
 
       }
 
