@@ -1,1 +1,2 @@
 .env
+./WebFlux/Mail/src/main/resources/application.properties
